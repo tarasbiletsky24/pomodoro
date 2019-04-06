@@ -54,20 +54,6 @@
                     <Label TextColor="Black" Grid.Column="1" Margin="2" VerticalOptions="End">minutes</Label>
                 </Grid>
 
-                <Label Text="Session Break Duration" Style="{StaticResource HeaderFieldStyle}"/>
-                <Grid MinimumHeightRequest="36" HorizontalOptions="FillAndExpand" >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*"></ColumnDefinition>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Entry Style="{StaticResource SmallEntryStyle}" Grid.Column="0" Text="{Binding LargeBreakDuration}">
-                        <Entry.Behaviors>
-                            <behaviors:NumberValidationBehavior/>
-                        </Entry.Behaviors>
-                    </Entry>
-                    <Label TextColor="Black" Grid.Column="1" Margin="2"  VerticalOptions="End">minutes</Label>
-                </Grid>
-
                 <Label Text="Session Pomodoro Count" Style="{StaticResource HeaderFieldStyle}"/>
                 <Grid MinimumHeightRequest="36" HorizontalOptions="FillAndExpand">
                     <Grid.ColumnDefinitions>
