@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms" 
+             xmlns:segmentedControl="clr-namespace:SegmentedControl.FormsPlugin.Abstractions;assembly=SegmentedControl.FormsPlugin.Abstractions"
+             xmlns:carouselControl="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+             Title="Statistics"
+             x:Class="PomodoroTimer.Views.StatisticPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <segmentedControl:SegmentedControl  Margin="10,2" SelectedSegment="{Binding IntervalType, Mode=TwoWay}">
+                <segmentedControl:SegmentedControl.Children>
+                    <segmentedControl:SegmentedControlOption Text="Day" />
+                    <segmentedControl:SegmentedControlOption Text="Week" />
+                    <segmentedControl:SegmentedControlOption Text="Month"  />
+                </segmentedControl:SegmentedControl.Children>
+            </segmentedControl:SegmentedControl>
+            <carouselControl:CarouselView  Position="{Binding Position, Mode=TwoWay}" ItemsSource="{Binding ChartViewModels}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <carouselControl:CarouselView.ItemTemplate>
+                    <DataTemplate>
+     
+                        <ScrollView  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                    <Label Style="{StaticResource GroupHeaderStyle}" Text="{Binding StartDay, StringFormat='{0:dd/MMM/yyyy}' }" Margin="0,0,0,0"></Label>
+                                    <Label Style="{StaticResource GroupHeaderStyle}" Text="{Binding FinishDay, StringFormat='- {0:dd/MMM/yyyy}' }" Margin="0,0,0,0"></Label>
+                                </StackLayout>
+                               
+                                <Label Style="{StaticResource GroupHeaderStyle}" Margin="10,0,0,0">Daily Count</Label>
+                                <microcharts:ChartView      
+                                Chart="{Binding WeeklyPointChart}"                           
+                                HorizontalOptions="FillAndExpand"
+                                HeightRequest="180" 
+                                Margin="10,0"       
+                                IsVisible="True">
+
+                                </microcharts:ChartView>
+                                
+                                <Label Style="{StaticResource GroupHeaderStyle}" Margin="10,10,0,0">Task Count</Label>
+                                <microcharts:ChartView      
+                                Chart="{Binding TaskDonutChart}"                           
+                                HorizontalOptions="FillAndExpand"
+                                HeightRequest="180" 
+                                Margin="10,0"            
+                                IsVisible="True">
+                                </microcharts:ChartView>
+                            </StackLayout>
+                        </ScrollView>
+                    </DataTemplate>
+                </carouselControl:CarouselView.ItemTemplate>
+            </carouselControl:CarouselView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
