@@ -6,9 +6,6 @@ using System.Collections.Generic;
 using PomodoroTimer.Models;
 namespace PomodoroTimer.ViewModels
 {
-
-
-
     public class AboutViewModel : PageViewModel
     {
         public string AppDetail { get; set; } = "";
@@ -18,8 +15,8 @@ namespace PomodoroTimer.ViewModels
         public List<ItemInfo> Contacts { get; set; }
         public List<ItemInfo> Libraries { get; set; }
 
-        private string MailAddres = "mailto:firakti@outlook.com?";
-        private string GithubUrl = "https://github.com/firakti";
+        private string MailAddres = "mailto:taras.biletsky24@gmail.com?";
+        private string GithubUrl = "https://github.com/tarasbiletsky24/pomodoro";
         private string RedditUrl = "";
 
         public ICommand OpenWebCommand { get; set; }
@@ -41,13 +38,7 @@ namespace PomodoroTimer.ViewModels
                     Icon="github.png",
                     Title="Github",
                     Url=GithubUrl,
-                },
-                //new ItemInfo()
-                //{
-                //    Icon="reddit.png",
-                //    Title="Reddit",
-                //    Url=RedditUrl,
-                //}
+                }
             };
 
             Libraries = new List<ItemInfo>
