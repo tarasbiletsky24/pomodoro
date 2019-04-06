@@ -18,7 +18,7 @@ namespace PomodoroTimer.ViewModels
         public List<ItemInfo> Contacts { get; set; }
         public List<ItemInfo> Libraries { get; set; }
 
-        private string MailAddres = "mailto:taras.biletsky24@gmail.com?";
+        private string MailAddres = "mailto:firakti@outlook.com?";
         private string GithubUrl = "https://github.com/firakti";
         private string RedditUrl = "";
 
